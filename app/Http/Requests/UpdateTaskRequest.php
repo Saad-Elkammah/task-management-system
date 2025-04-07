@@ -36,7 +36,7 @@ class UpdateTaskRequest extends FormRequest
         // Full validation rules for users with edit permission
         return [
             'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'description' => 'nullable|string|max:255',
             'status' => ['required', Rule::in(['pending', 'in_progress', 'completed'])],
             'due_date' => 'date|after_or_equal:today',
             'assigned_users' => 'required|array',
