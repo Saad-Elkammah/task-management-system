@@ -41,7 +41,7 @@ class RolesAndPermissionsSeeder extends Seeder
         // Assign roles to existing users based on their current 'role' field
         $users = User::all();
         foreach ($users as $user) {
-            if ($user->role === 'admin') {
+            if ($user->name === 'Admin User') {
                 $user->assignRole('admin');
             } else {
                 $user->assignRole('user');
